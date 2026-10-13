@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="A practical, mobile-first AI and machine learning field guide with curated resources, phase checkpoints, projects, and locally saved progress.">
+  <title>Field Guide — Less Planning. More Building.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to roadmap</a>
+
+  <header class="topbar shell">
+    <a class="brand" href="#top" aria-label="Field Guide home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>FIELD<span class="brand-accent">GUIDE</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#roadmap">Roadmap</a>
+      <a href="#rules">How to learn</a>
+      <a href="#toolkit">Toolkit</a>
+    </nav>
+    <button class="button button-small button-quiet" id="focusModeBtn" type="button" aria-pressed="false">
+      <span aria-hidden="true">◐</span> Focus mode
+    </button>
+  </header>
+
+  <main id="main" class="shell">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> THE PRACTICAL AI/ML PATH</div>
+        <h1>Less planning.<br><span class="gradient-text">More building.</span></h1>
+        <p class="hero-subtitle">A map from “I can code a little” to “I can build, explain, evaluate, and ship an AI project.” One phase at a time. No prerequisite-marathon required.</p>
+        <div class="hero-actions">
+          <button class="button button-primary" id="resumeBtn" type="button">Resume my path <span aria-hidden="true">↗</span></button>
+          <a class="button button-quiet" href="#roadmap">Explore the phases <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="trust-note"><span aria-hidden="true">✳</span> Curated around free, reputable resources. You do not need to finish every link.</div>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of a learning path from data to a deployed model">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="visual-core"><span class="core-glyph">◎</span><span>BUILD<br>LOOP</span></div>
+        <div class="float-chip chip-data"><span class="chip-icon">▦</span><span><b>DATA</b><small>find patterns</small></span></div>
+        <div class="float-chip chip-model"><span class="chip-icon">⌘</span><span><b>MODEL</b><small>test a hypothesis</small></span></div>
+        <div class="float-chip chip-ship"><span class="chip-icon">↗</span><span><b>SHIP</b><small>make it useful</small></span></div>
+        <div class="visual-caption">LEARN → TRY → EXPLAIN → REPEAT</div>
+      </div>
+    </section>
+
+    <section class="dashboard" aria-label="Your progress dashboard">
+      <div class="progress-card panel">
+        <div class="card-topline"><span class="section-kicker">YOUR JOURNEY</span><span id="progressLabel" class="muted">0% complete</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Overall roadmap progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overallProgress"><span id="overallProgressFill"></span></div>
+        <div class="progress-bottom"><span><strong id="tasksDone">0</strong> <span class="muted">of</span> <strong id="tasksTotal">0</strong> <span class="muted">milestones</span></span><span id="phasesDone" class="mini-pill">0 / 9 phases</span></div>
+      </div>
+      <div class="focus-card panel">
+        <div class="focus-icon" aria-hidden="true">✦</div>
+        <div class="focus-content"><span class="section-kicker">YOUR NEXT SMALL WIN</span><h2 id="nextWinTitle">Set up your learning workspace</h2><p id="nextWinText">Do one small task today. Progress comes from finished attempts, not perfect plans.</p></div>
+        <button class="icon-button" id="jumpToNextBtn" type="button" aria-label="Go to next milestone" title="Go to next milestone">↗</button>
+      </div>
+    </section>
+
+    <section class="today-strip panel" aria-label="Today's focus session">
+      <div class="today-heading"><div class="today-symbol" aria-hidden="true">◷</div><div><span class="section-kicker">THE 25-MINUTE RULE</span><h2>Make starting ridiculously easy.</h2><p>One tab. One task. Stop when the timer ends—or continue if you're in flow.</p></div></div>
+      <div class="timer" aria-live="polite"><div class="timer-display" id="timerDisplay">25:00</div><div class="timer-actions"><button class="button button-primary button-small" id="timerStartBtn" type="button">Start focus</button><button class="button button-quiet button-small" id="timerResetBtn" type="button">Reset</button></div></div>
+    </section>
+
+    <section class="route-section" id="roadmap">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE ROUTE</div><h2>Your path, in phases.</h2><p>Follow the order, but don't wait for perfect understanding. Each phase ends with something you can demonstrate.</p></div>
+        <div class="route-legend"><span><i class="legend-dot legend-core"></i> Core path</span><span><i class="legend-dot legend-optional"></i> Optional later</span></div>
+      </div>
+      <div id="phaseList" class="phase-list"></div>
+    </section>
+
+    <section class="learning-rules" id="rules">
+      <div class="section-heading compact-heading"><div><div class="eyebrow">ANTI-OVERWHELM SYSTEM</div><h2>Rules that keep you moving.</h2><p>Use these when your attention drops, a topic feels hard, or you want to start another course.</p></div></div>
+      <div class="rules-grid">
+        <article class="rule-card"><span class="rule-number">01</span><h3>One main resource</h3><p>Pick the core resource listed in your current phase. Use extras only when something is unclear. No collecting courses.</p></article>
+        <article class="rule-card"><span class="rule-number">02</span><h3>Copy, then change</h3><p>Following an example is okay. Next, change an input or method, predict the result, run it, and explain what happened.</p></article>
+        <article class="rule-card"><span class="rule-number">03</span><h3>Build before you feel ready</h3><p>Start the tiny project early. Google errors, read docs, and ask for help—but write down what you learned to fix.</p></article>
+        <article class="rule-card"><span class="rule-number">04</span><h3>No streak guilt</h3><p>Missing days is normal. There is no streak to protect. Return by doing the next 10-minute action, not by restarting.</p></article>
+      </div>
+      <div class="balance-note"><div class="balance-icon" aria-hidden="true">⌁</div><div><strong>Placement season is still active.</strong><p>If you're applying to general software roles, keep DSA, CS fundamentals, and interview practice as the main track. Use AI/ML as a focused second track. This roadmap is designed to progress in short sessions.</p></div></div>
+    </section>
+
+    <section class="toolkit-section" id="toolkit">
+      <div class="section-heading compact-heading"><div><div class="eyebrow">KEEP IT SIMPLE</div><h2>Your toolkit.</h2><p>Don't install everything today. Use tools when a phase needs them.</p></div></div>
+      <div class="toolkit-grid">
+        <div class="tool-card"><span class="tool-logo logo-python">Py</span><div><h3>Python + notebooks</h3><p>Experiment in small cells; keep work reproducible.</p><a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">Jupyter <span>↗</span></a></div></div>
+        <div class="tool-card"><span class="tool-logo logo-data">▤</span><div><h3>Data work</h3><p>Tables, array operations, and quick visual checks.</p><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/" target="_blank" rel="noopener noreferrer">pandas tutorials <span>↗</span></a></div></div>
+        <div class="tool-card"><span class="tool-logo logo-ml">⌘</span><div><h3>Classical ML</h3><p>Start with reliable, well-documented algorithms.</p><a href="https://scikit-learn.org/stable/getting_started.html" target="_blank" rel="noopener noreferrer">scikit-learn <span>↗</span></a></div></div>
+        <div class="tool-card"><span class="tool-logo logo-git">⌥</span><div><h3>Version control</h3><p>Save checkpoints and show what you actually built.</p><a href="https://skills.github.com/" target="_blank" rel="noopener noreferrer">GitHub Skills <span>↗</span></a></div></div>
+      </div>
+    </section>
+
+    <section class="honesty panel" aria-label="How this roadmap is designed">
+      <span class="honesty-icon" aria-hidden="true">ⓘ</span><div><h2>A map, not a promise.</h2><p>Finishing checkboxes is not the same as mastering a topic. Use the exit checks to test yourself honestly. Resource links can change; if one breaks, use the official documentation linked nearby. Most listed core resources are free, but external platforms may change access or terms.</p></div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>FIELD<span class="brand-accent">GUIDE</span></span></div>
+      <p>Built for steady progress, not perfect motivation.</p>
+      <div class="footer-actions"><button class="text-button" id="exportBtn" type="button">Export progress</button><label class="text-button import-label" for="importFile">Import progress<input id="importFile" type="file" accept="application/json,.json"></label><button class="text-button danger-text" id="resetBtn" type="button">Reset progress</button></div>
+      <div class="save-status" id="saveStatus" aria-live="polite">Progress stays in this browser on this device.</div>
+    </footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
