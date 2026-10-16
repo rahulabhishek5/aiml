@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0d11">
-  <meta name="description" content="A practical, mobile-first AI and machine learning field guide with curated resources, phase checkpoints, projects, and locally saved progress.">
+  <meta name="description" content="A practical, mobile-first AI and machine learning field guide with topics, projects, explanations, and curated learning resources.">
   <title>Field Guide — Less Planning. More Building.</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,9 +21,6 @@
       <a href="#rules">How to learn</a>
       <a href="#toolkit">Toolkit</a>
     </nav>
-    <button class="button button-small button-quiet" id="focusModeBtn" type="button" aria-pressed="false">
-      <span aria-hidden="true">◐</span> Focus mode
-    </button>
   </header>
 
   <main id="main" class="shell">
@@ -33,8 +30,8 @@
         <h1>Less planning.<br><span class="gradient-text">More building.</span></h1>
         <p class="hero-subtitle">A map from “I can code a little” to “I can build, explain, evaluate, and ship an AI project.” One phase at a time. No prerequisite-marathon required.</p>
         <div class="hero-actions">
-          <button class="button button-primary" id="resumeBtn" type="button">Resume my path <span aria-hidden="true">↗</span></button>
-          <a class="button button-quiet" href="#roadmap">Explore the phases <span aria-hidden="true">↓</span></a>
+          <a class="button button-primary" href="#roadmap">Browse topics <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="#toolkit">Explore the toolkit <span aria-hidden="true">↓</span></a>
         </div>
         <div class="trust-note"><span aria-hidden="true">✳</span> Curated around free, reputable resources. You do not need to finish every link.</div>
       </div>
@@ -48,27 +45,9 @@
       </div>
     </section>
 
-    <section class="dashboard" aria-label="Your progress dashboard">
-      <div class="progress-card panel">
-        <div class="card-topline"><span class="section-kicker">YOUR JOURNEY</span><span id="progressLabel" class="muted">0% complete</span></div>
-        <div class="progress-track" role="progressbar" aria-label="Overall roadmap progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overallProgress"><span id="overallProgressFill"></span></div>
-        <div class="progress-bottom"><span><strong id="tasksDone">0</strong> <span class="muted">of</span> <strong id="tasksTotal">0</strong> <span class="muted">milestones</span></span><span id="phasesDone" class="mini-pill">0 / 9 phases</span></div>
-      </div>
-      <div class="focus-card panel">
-        <div class="focus-icon" aria-hidden="true">✦</div>
-        <div class="focus-content"><span class="section-kicker">YOUR NEXT SMALL WIN</span><h2 id="nextWinTitle">Set up your learning workspace</h2><p id="nextWinText">Do one small task today. Progress comes from finished attempts, not perfect plans.</p></div>
-        <button class="icon-button" id="jumpToNextBtn" type="button" aria-label="Go to next milestone" title="Go to next milestone">↗</button>
-      </div>
-    </section>
-
-    <section class="today-strip panel" aria-label="Today's focus session">
-      <div class="today-heading"><div class="today-symbol" aria-hidden="true">◷</div><div><span class="section-kicker">THE 25-MINUTE RULE</span><h2>Make starting ridiculously easy.</h2><p>One tab. One task. Stop when the timer ends—or continue if you're in flow.</p></div></div>
-      <div class="timer" aria-live="polite"><div class="timer-display" id="timerDisplay">25:00</div><div class="timer-actions"><button class="button button-primary button-small" id="timerStartBtn" type="button">Start focus</button><button class="button button-quiet button-small" id="timerResetBtn" type="button">Reset</button></div></div>
-    </section>
-
     <section class="route-section" id="roadmap">
       <div class="section-heading">
-        <div><div class="eyebrow">THE ROUTE</div><h2>Your path, in phases.</h2><p>Follow the order, but don't wait for perfect understanding. Each phase ends with something you can demonstrate.</p></div>
+        <div><div class="eyebrow">THE ROUTE</div><h2>Your path, in phases.</h2><p>Explore the topics, explanations, projects, and curated resources across these nine learning phases.</p></div>
         <div class="route-legend"><span><i class="legend-dot legend-core"></i> Core path</span><span><i class="legend-dot legend-optional"></i> Optional later</span></div>
       </div>
       <div id="phaseList" class="phase-list"></div>
@@ -80,9 +59,9 @@
         <article class="rule-card"><span class="rule-number">01</span><h3>One main resource</h3><p>Pick the core resource listed in your current phase. Use extras only when something is unclear. No collecting courses.</p></article>
         <article class="rule-card"><span class="rule-number">02</span><h3>Copy, then change</h3><p>Following an example is okay. Next, change an input or method, predict the result, run it, and explain what happened.</p></article>
         <article class="rule-card"><span class="rule-number">03</span><h3>Build before you feel ready</h3><p>Start the tiny project early. Google errors, read docs, and ask for help—but write down what you learned to fix.</p></article>
-        <article class="rule-card"><span class="rule-number">04</span><h3>No streak guilt</h3><p>Missing days is normal. There is no streak to protect. Return by doing the next 10-minute action, not by restarting.</p></article>
+        <article class="rule-card"><span class="rule-number">04</span><h3>Learn at a steady pace</h3><p>Revisit difficult ideas when needed. Focus on understanding concepts and applying them rather than rushing through every resource.</p></article>
       </div>
-      <div class="balance-note"><div class="balance-icon" aria-hidden="true">⌁</div><div><strong>Placement season is still active.</strong><p>If you're applying to general software roles, keep DSA, CS fundamentals, and interview practice as the main track. Use AI/ML as a focused second track. This roadmap is designed to progress in short sessions.</p></div></div>
+      <div class="balance-note"><div class="balance-icon" aria-hidden="true">⌁</div><div><strong>Placement season is still active.</strong><p>If you're applying to general software roles, keep DSA, CS fundamentals, and interview practice as the main track. Use AI/ML as a focused second track. This roadmap is designed for short learning sessions.</p></div></div>
     </section>
 
     <section class="toolkit-section" id="toolkit">
@@ -96,17 +75,14 @@
     </section>
 
     <section class="honesty panel" aria-label="How this roadmap is designed">
-      <span class="honesty-icon" aria-hidden="true">ⓘ</span><div><h2>A map, not a promise.</h2><p>Finishing checkboxes is not the same as mastering a topic. Use the exit checks to test yourself honestly. Resource links can change; if one breaks, use the official documentation linked nearby. Most listed core resources are free, but external platforms may change access or terms.</p></div>
+      <span class="honesty-icon" aria-hidden="true">ⓘ</span><div><h2>A map, not a promise.</h2><p>Reading about a topic is only the beginning. Try the examples and projects, explain the ideas in your own words, and consult the official documentation when you need more detail. Resource links and access terms may change.</p></div>
     </section>
 
     <footer class="footer">
       <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>FIELD<span class="brand-accent">GUIDE</span></span></div>
-      <p>Built for steady progress, not perfect motivation.</p>
-      <div class="footer-actions"><button class="text-button" id="exportBtn" type="button">Export progress</button><label class="text-button import-label" for="importFile">Import progress<input id="importFile" type="file" accept="application/json,.json"></label><button class="text-button danger-text" id="resetBtn" type="button">Reset progress</button></div>
-      <div class="save-status" id="saveStatus" aria-live="polite">Progress stays in this browser on this device.</div>
+      <p>A practical guide to learning AI/ML through topics, resources, and projects.</p>
     </footer>
   </main>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
 </html>
